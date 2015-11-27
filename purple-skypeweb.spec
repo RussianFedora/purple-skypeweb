@@ -46,19 +46,7 @@ cd %{plugin_name}
 %license COPYING.txt
 
 %files -n pidgin-%{plugin_name}
-%dir %{_datadir}/pixmaps/pidgin
-%dir %{_datadir}/pixmaps/pidgin/protocols
-%dir %{_datadir}/pixmaps/pidgin/protocols/16
-%{_datadir}/pixmaps/pidgin/protocols/16/skype.png
-%{_datadir}/pixmaps/pidgin/protocols/16/skypeout.png
-%dir %{_datadir}/pixmaps/pidgin/protocols/22
-%{_datadir}/pixmaps/pidgin/protocols/22/skype.png
-%{_datadir}/pixmaps/pidgin/protocols/22/skypeout.png
-%dir %{_datadir}/pixmaps/pidgin/protocols/48
-%{_datadir}/pixmaps/pidgin/protocols/48/skype.png
-%{_datadir}/pixmaps/pidgin/protocols/48/skypeout.png
-%dir %{_datadir}/pixmaps/pidgin/emotes
-%dir %{_datadir}/pixmaps/pidgin/emotes/skype
+%{_datadir}/pixmaps/pidgin/protocols/*/skype*.png
 %{_datadir}/pixmaps/pidgin/emotes/skype/theme
 
 %changelog
