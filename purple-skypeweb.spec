@@ -1,4 +1,3 @@
-%global debug_package %{nil}
 %global plugin_name skypeweb
 
 Name: purple-%{plugin_name}
@@ -46,6 +45,7 @@ cd %{plugin_name}
 %install
 cd %{plugin_name}
 %make_install
+chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
