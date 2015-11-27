@@ -19,7 +19,7 @@ Adds support for Skype to Pidgin, Adium, Finch and other libpurple
 based messengers.
 
 %package -n pidgin-%{plugin_name}
-Summary: Adds pixmaps, icons and smileys for Skype protocol.
+Summary: Adds pixmaps, icons and smileys for Skype protocol
 Requires: %{name}
 Requires: pidgin
 
