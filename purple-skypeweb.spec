@@ -33,7 +33,12 @@ Adds pixmaps, icons and smileys for Skype protocol inplemented by libskypeweb.
 # fix W: wrong-file-end-of-line-encoding
 perl -i -pe 's/\r\n/\n/gs' %{plugin_name}/README.md
 
+# generating empty configure script
+echo '#!/bin/bash' > configure
+chmod +x configure
+
 %build
+%configure
 cd %{plugin_name}
 %make_build
 
