@@ -20,6 +20,7 @@ based messengers.
 
 %package -n pidgin-%{plugin_name}
 Summary: Adds pixmaps, icons and smileys for Skype protocol
+BuildArch: noarch
 Requires: %{name}{?_isa} = -{release}
 Requires: pidgin
 
@@ -39,6 +40,8 @@ cd %{plugin_name}
 %install
 cd %{plugin_name}
 %make_install
+
+%post -p /sbin/ldconfig
 
 %files
 %{_libdir}/purple-2/lib%{plugin_name}.so
