@@ -29,17 +29,18 @@ Adds pixmaps, icons and smileys for Skype protocol inplemented by libskypeweb.
 
 %prep
 %setup -qn skype4pidgin-%{version}
+cd %{plugin_name}
 
 # fix W: wrong-file-end-of-line-encoding
-perl -i -pe 's/\r\n/\n/gs' %{plugin_name}/README.md
+perl -i -pe 's/\r\n/\n/gs' README.md
 
 # generating empty configure script
 echo '#!/bin/bash' > configure
 chmod +x configure
 
 %build
-%configure
 cd %{plugin_name}
+%configure
 %make_build
 
 %install
