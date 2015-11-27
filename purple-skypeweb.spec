@@ -20,7 +20,7 @@ based messengers.
 
 %package -n pidgin-%{plugin_name}
 Summary: Adds pixmaps, icons and smileys for Skype protocol
-Requires: %{name}
+Requires: %{name}{?_isa} = -{release}
 Requires: pidgin
 
 %description -n pidgin-%{plugin_name}
