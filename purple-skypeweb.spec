@@ -42,6 +42,7 @@ cd %{plugin_name}
 %make_install
 
 %post -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %{_libdir}/purple-2/lib%{plugin_name}.so
