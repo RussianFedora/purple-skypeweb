@@ -7,10 +7,12 @@
 Name: purple-%{plugin_name}
 Version: 1.0
 Release: 3.%{date}git%{shortcommit0}%{?dist}
+Summary: Adds support for Skype to Pidgin
+
 License: GPLv3
 URL: https://github.com/EionRobb/skype4pidgin
 Source0: https://github.com/EionRobb/skype4pidgin/archive/%{commit0}.tar.gz#/skype4pidgin-%{shortcommit0}.tar.gz
-Summary: Adds support for Skype to Pidgin
+
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
 BuildRequires: pkgconfig(json-glib-1.0)
