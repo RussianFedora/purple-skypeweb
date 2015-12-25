@@ -1,12 +1,18 @@
 %global plugin_name skypeweb
 
+%global commit0 a173efa511b2838de664c9c920eabc5eab4781be
+%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
+%global date 20151225
+
 Name: purple-%{plugin_name}
 Version: 1.0
-Release: 2%{?dist}
+Release: 3.%{date}git%{shortcommit0}%{?dist}
+Summary: Adds support for Skype to Pidgin
+
 License: GPLv3
 URL: https://github.com/EionRobb/skype4pidgin
-Source0: https://github.com/EionRobb/skype4pidgin/archive/v%{version}.tar.gz
-Summary: Adds support for Skype to Pidgin
+Source0: https://github.com/EionRobb/skype4pidgin/archive/%{commit0}.tar.gz#/skype4pidgin-%{shortcommit0}.tar.gz
+
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
 BuildRequires: pkgconfig(json-glib-1.0)
@@ -27,7 +33,7 @@ Requires: pidgin
 Adds pixmaps, icons and smileys for Skype protocol inplemented by libskypeweb.
 
 %prep
-%setup -qn skype4pidgin-%{version}
+%setup -qn skype4pidgin-%{commit0}
 cd %{plugin_name}
 
 # fix W: wrong-file-end-of-line-encoding
@@ -60,6 +66,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype/theme
 
 %changelog
+* Fri Dec 25 2015 V1TSK <vitaly@easycoding.org> - 1.0-3.20151225gita173efa
+- Updated to latest version: fixed plugin crash.
+
 * Thu Nov 26 2015 V1TSK <vitaly@easycoding.org> - 1.0-2
 - Applyed Maxim Orlov's fixes.
 
