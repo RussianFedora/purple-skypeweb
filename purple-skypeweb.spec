@@ -2,7 +2,7 @@
 
 %global commit0 68cb5f35b70e8279b97cc0da91449fae78d32b20
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20160102
+%global date 20160101
 
 Name: purple-%{plugin_name}
 Version: 1.0
@@ -70,7 +70,7 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype/theme
 
 %changelog
-* Sat Jan 02 2016 V1TSK <vitaly@easycoding.org> - 1.0-4.20160102git68cb5f3
+* Sat Jan 02 2016 V1TSK <vitaly@easycoding.org> - 1.0-4.20160101git68cb5f3
 - Updated to latest version: added support for receiving server-backed files. Added patch.
 
 * Fri Dec 25 2015 V1TSK <vitaly@easycoding.org> - 1.0-3.20151225gita173efa
