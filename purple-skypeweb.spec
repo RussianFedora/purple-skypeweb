@@ -1,17 +1,18 @@
 %global plugin_name skypeweb
 
-%global commit0 a173efa511b2838de664c9c920eabc5eab4781be
+%global commit0 68cb5f35b70e8279b97cc0da91449fae78d32b20
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20151225
+%global date 20160102
 
 Name: purple-%{plugin_name}
 Version: 1.0
-Release: 3.%{date}git%{shortcommit0}%{?dist}
+Release: 4.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
 URL: https://github.com/EionRobb/skype4pidgin
 Source0: https://github.com/EionRobb/skype4pidgin/archive/%{commit0}.tar.gz#/skype4pidgin-%{shortcommit0}.tar.gz
+Patch0: fix_build_under_patched_fedora.patch
 
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
@@ -35,6 +36,9 @@ Adds pixmaps, icons and smileys for Skype protocol inplemented by libskypeweb.
 %prep
 %setup -qn skype4pidgin-%{commit0}
 cd %{plugin_name}
+
+# applying patches
+%patch0 -p1
 
 # fix W: wrong-file-end-of-line-encoding
 perl -i -pe 's/\r\n/\n/gs' README.md
@@ -66,6 +70,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype/theme
 
 %changelog
+* Sat Jan 02 2015 V1TSK <vitaly@easycoding.org> - 1.0-4.20160102git68cb5f3
+- Updated to latest version: added support for receiving server-backed files. Added patch.
+
 * Fri Dec 25 2015 V1TSK <vitaly@easycoding.org> - 1.0-3.20151225gita173efa
 - Updated to latest version: fixed plugin crash.
 
