@@ -12,7 +12,7 @@ Summary: Adds support for Skype to Pidgin
 License: GPLv3
 URL: https://github.com/EionRobb/skype4pidgin
 Source0: https://github.com/EionRobb/skype4pidgin/archive/%{commit0}.tar.gz#/skype4pidgin-%{shortcommit0}.tar.gz
-Patch0: fix_build_under_patched_fedora.patch
+Patch0: https://github.com/xvitaly/purple-skypeweb/raw/master/fix_build_under_patched_fedora.patch
 
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
@@ -70,7 +70,7 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype/theme
 
 %changelog
-* Sat Jan 02 2015 V1TSK <vitaly@easycoding.org> - 1.0-4.20160102git68cb5f3
+* Sat Jan 02 2016 V1TSK <vitaly@easycoding.org> - 1.0-4.20160102git68cb5f3
 - Updated to latest version: added support for receiving server-backed files. Added patch.
 
 * Fri Dec 25 2015 V1TSK <vitaly@easycoding.org> - 1.0-3.20151225gita173efa
