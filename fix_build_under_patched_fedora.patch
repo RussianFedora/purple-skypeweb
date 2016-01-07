@@ -1,5 +1,5 @@
---- skypeweb/libskypeweb.h
-+++ skypeweb/libskypeweb.h
+--- /skypeweb/libskypeweb.h
++++ /skypeweb/libskypeweb.h
 @@ -175,15 +175,7 @@
  	#define purple_hash_destroy purple_cipher_context_destroy
  	#define purple_xfer_set_protocol_data(xfer, proto_data) ((xfer)->data = (proto_data))
