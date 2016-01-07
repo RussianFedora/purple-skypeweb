@@ -34,11 +34,8 @@ Requires: pidgin
 Adds pixmaps, icons and smileys for Skype protocol inplemented by libskypeweb.
 
 %prep
-%setup -qn skype4pidgin-%{commit0}
+%autosetup -n skype4pidgin-%{commit0} -p1
 cd %{plugin_name}
-
-# applying patches
-%patch0 -p1
 
 # fix W: wrong-file-end-of-line-encoding
 perl -i -pe 's/\r\n/\n/gs' README.md
