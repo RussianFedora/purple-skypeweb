@@ -1,18 +1,21 @@
 %global plugin_name skypeweb
 
-%global commit0 9764e3120f1287701d0ef224175898923b5948c1
+%global commit0 04312d82daa697bcc96cade8ed66e290e7c599d7
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20160107
+%global date 20160214
 
 Name: purple-%{plugin_name}
 Version: 1.1
-Release: 1.%{date}git%{shortcommit0}%{?dist}
+Release: 2.%{date}git%{shortcommit0}%{?dist}
 Summary: Adds support for Skype to Pidgin
 
 License: GPLv3
 URL: https://github.com/EionRobb/skype4pidgin
 Source0: https://github.com/EionRobb/skype4pidgin/archive/%{commit0}.tar.gz#/skype4pidgin-%{shortcommit0}.tar.gz
+
+%if 0%{?fedora}
 Patch0: https://github.com/xvitaly/purple-skypeweb/raw/master/fix_build_under_patched_fedora.patch
+%endif
 
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(purple)
@@ -67,6 +70,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/lib%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/emotes/skype/theme
 
 %changelog
+* Tue Feb 16 2016 V1TSK <vitaly@easycoding.org> - 1.1-2.20160214git04312d8
+- Updated to latest Git version. Added EPEL7 support.
+
 * Thu Jan 07 2016 V1TSK <vitaly@easycoding.org> - 1.1-1.20160107git9764e31
 - Updated to version 1.1: added support of file transfers, fixed Live logins, fixed other crashes.
 
