@@ -1,10 +1,9 @@
 purple-skypeweb
 ================
 
- * Название:			purple-skypeweb
- * Мейнтейнер:			Vitaly Zaitsev
- * Репозиторий:			russianfedora-free
- * Почему не в апстриме:	??
- * Комментарий:			Добавляет поддержку протокола Skype в Pidgin и другие клиенты,
-				основанные на библиотеке libpurple.
+ * Package name:		*purple-skypeweb*.
+ * Maintainer:			*Vitaly Zaitsev*.
+ * Repository:			*russianfedora-free*.
+ * Upstream status:		[*waiting for package review*](https://bugzilla.redhat.com/show_bug.cgi?id=1294523).
+ * Description:			adds support for Skype to Pidgin, Adium, Finch and other libpurple based messengers.
  
